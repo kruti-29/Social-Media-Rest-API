@@ -4,7 +4,6 @@ const Post = require("../models/post_model");
 const bcrypt = require('bcryptjs');
 
 // UPADATE USER
-
 router.put("/:id", async (req, res) => {
     if (req.body.userId === req.params.id || req.body.isAdmin) {
       if (req.body.password) {
@@ -42,6 +41,7 @@ router.delete("/:id", async (req, res) => {
       return res.status(403).json("You can delete only your account!");
     }
   });
+
 
 // GET A USER
 router.get("/:id", async (req, res) => {
